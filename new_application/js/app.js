@@ -8,20 +8,20 @@ $(function ()  {
 
     .done(function (tablica) {
 
-        for (var i=0; i<tablica.length; i++) {
+        for (var i=0; i<tablica.length; i++) {  //iterowanie po tablicy zawierającej 100 książek
 
-            var newel = $("<p> " + tablica[i].title + " </p>")
-            $("div#books").append(newel)
+            var newel = $("<p> " + tablica[i].title + " </p>") // zmienna wstawiająca tytuł do osobnego paragrafu
+            $("div#books").append(newel)    // dodanie zmiennej do drzewka DOM
 
-            var content = $(tablica[i])
-            var contJson = JSON.stringify(content)
+            var content = $(tablica[i])     // zmienna odnosząca sie do zawartości danego wpisu w tabeli
+            var contJson = JSON.stringify(content)  // zamiana zawartości na string
 
-            var description = $("<div>  </div>")
-            $("div#books").append(description)
+            var description = $("<div>  </div>")    // utworzenie pustego elementu div
+            $("div#books").append(description)      // dodanie div do drzewka DOM
 
-            $(newel).click(function() {
+            $(newel).click(function() {             // podpięcie wydarzenia do każdej książki
 
-               $(this).description.appendTo(contJson)
+               $(this).description.appendTo(contJson)   // próba wyświetlenia elementu div z zawartością
 
             })
         }
